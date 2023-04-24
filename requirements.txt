@@ -9,3 +9,4 @@ pandas==1.4.4
 matplotlib==3.5.2
 seaborn==0.11.2
 rarfile==4.0
+gensim==4.3.1
