@@ -117,7 +117,7 @@ if st.button('Result'):
         df['LabuteASA_Excipient'] = df['mol_Excipient'].apply(lambda x: Descriptors.LabuteASA(x))
         df['BalabanJ_Excipient'] = df['mol_Excipient'].apply(lambda x: Descriptors.BalabanJ(x))
         df['BertzCT_Excipient'] = df['mol_Excipient'].apply(lambda x: Descriptors.BertzCT(x))
-        open('C:/Users/WINDOWS/model_301dim.pkl', 'r')
+        open('model_300dim.pkl', 'r')
     #### 
         from mol2vec.features import mol2alt_sentence, mol2sentence, MolSentence, DfVec, sentences2vec
         from gensim.models import word2vec
