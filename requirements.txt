@@ -12,3 +12,4 @@ rarfile==4.0
 gensim==4.3.1
 Pillow==9.1.1
 mol2vec==0.1
+pip==23.0.1
