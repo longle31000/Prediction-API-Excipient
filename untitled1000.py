@@ -35,6 +35,12 @@ with col1:
 with col2:
     Excipient_CID = st.text_input('Number of Excipient_CID')
 
+uploaded_file = st.file_uploader("Choose your file", type='csv')
+if uploaded_file is not None:
+    df1 = pd.read_csv(uploaded_file)
+else:
+    df1 = pd.read_csv("C:/Users/WINDOWS/hoa21.csv")
+    
 # code for Prediction
 Predict_Result1 = ''
 Predict_Result2 = ''
@@ -42,7 +48,6 @@ Predict_Result3 = ''
 if st.button('Result'):
     API_CID = get_cid(API_CID)
     Excipient_CID = get_cid(Excipient_CID)
-    df1 = pd.read_csv("C:/Users/WINDOWS/hoa21.csv")
     longle1 = df1.loc[(df1['API_CID'] == API_CID) & (df1['Excipient_CID'] == Excipient_CID)]
     longle2 = df1.loc[(df1['API_CID'] == Excipient_CID) & (df1['Excipient_CID'] == API_CID)]
 
