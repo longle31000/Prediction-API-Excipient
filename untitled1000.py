@@ -39,7 +39,7 @@ uploaded_file = st.file_uploader("Choose your file", type='csv')
 if uploaded_file is not None:
     df1 = pd.read_csv(uploaded_file)
 else:
-    df1 = pd.read_csv("C:/Users/WINDOWS/hoa21.csv")
+    df1 = pd.read_csv("hoa2.csv")
     
 # code for Prediction
 Predict_Result1 = ''
@@ -121,7 +121,7 @@ if st.button('Result'):
     #### 
         from mol2vec.features import mol2alt_sentence, mol2sentence, MolSentence, DfVec, sentences2vec
         from gensim.models import word2vec
-        w2vec_model = word2vec.Word2Vec.load('C:/Users/WINDOWS/model_301dim.pkl')
+        w2vec_model = word2vec.Word2Vec.load('model_300dim.pkl')
         df['sentence_API'] = df.apply(lambda x: MolSentence(mol2alt_sentence(x['mol_API'], 1)), axis=1)
         df['mol2vec_API'] = [DfVec(x) for x in sentences2vec(df['sentence_API'], w2vec_model, unseen='UNK')]
         df['sentence_Excipient'] = df.apply(lambda x: MolSentence(mol2alt_sentence(x['mol_Excipient'], 1)), axis=1)
@@ -140,7 +140,7 @@ if st.button('Result'):
 'NumAromaticRings_Excipient','NumSaturatedRings_Excipient','NumAliphaticRings_Excipient','RingCount_Excipient',
 'TPSA_Excipient','LabuteASA_Excipient','BalabanJ_Excipient','BertzCT_Excipient', 'API_CID', 'Excipient_CID' ], axis=1)), axis=1)
         import joblib
-        model = joblib.load('C:/Users/WINDOWS/model101.pkl')
+        model = joblib.load('model100.pkl')
         diab_prediction = model.predict(X)
     
         if diab_prediction[0] == 1:
